@@ -611,7 +611,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <!-- User Image Section -->
-            <div id="user-image-section" class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
+            <!-- <div id="user-image-section" class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
                 <h2 class="text-2xl font-semibold mb-4">1. Your Image</h2>
                 <div id="user-image-container" class="w-full h-64 flex items-center justify-center upload-box rounded-lg mb-4 cursor-pointer">
                     <img id="user-preview" src="" alt="Your image" class="hidden max-h-full max-w-full rounded-lg">
@@ -624,25 +624,25 @@
                 <button id="upload-user-btn" class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
                     Upload Image
                 </button>
-            </div>
+            </div> -->
 
-            <!-- Garment Selection Section -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
+            <!-- <!-- Garment Selection Section -->
+            <!-- <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-2xl font-semibold mb-4 text-center">2. Select a Garment</h2>
                 <div id="garment-categories" class="space-y-6 h-96 overflow-y-auto pr-2">
                     <!-- Categories and garments will be injected by JavaScript -->
-                </div>
-            </div>
+                <!-- </div>
+            </div> --> -->
 
             <!-- Result Section -->
-            <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
+            <!-- <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
                 <h2 class="text-2xl font-semibold mb-4">3. Virtual Try-On Result</h2>
                 <div id="result-container" class="w-full h-auto flex items-center justify-center bg-gray-100 rounded-lg mb-4 relative" style="min-height: 256px;">
                     <canvas id="result-canvas" class="hidden max-h-full max-w-full rounded-lg"></canvas>
                     <div id="result-placeholder" class="text-gray-500">
                          <p>Your result will appear here</p>
-                         <p class="text-xs mt-2">(Drag garment to move, scroll to resize)</p>
-                    </div>
+                         <p class="text-xs mt-2">(Drag garment to move, scroll to resize)</p> -->
+                    <!-- </div>
                      <div id="loading-spinner" class="spinner hidden"></div>
                 </div>
                 <div class="w-full grid grid-cols-1 gap-2">
@@ -656,13 +656,13 @@
                 <button id="download-btn" class="hidden w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 mt-4">
                     Download Result
                 </button>
-            </div>
-
+            </div> --> -->
+<!-- 
         </div>
-    </main>
+    </main> -->
 
     <!-- Modal for messages -->
-    <div id="messageModal" class="modal">
+    <!-- <div id="messageModal" class="modal">
         <div class="modal-content rounded-lg shadow-xl">
             <div class="flex justify-between items-center pb-3">
                 <p class="text-2xl font-bold" id="modalTitle">Notification</p>
@@ -672,15 +672,15 @@
                 <p id="modalMessage">This is a message.</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <footer class="bg-white mt-12 py-6">
+    <!-- <footer class="bg-white mt-12 py-6">
         <div class="container mx-auto text-center">
             <p class="text-gray-600">&copy; 2025 AI-Based Virtual Try-On System. All rights reserved.</p>
         </div>
-    </footer>
+    </footer> -->
 
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             // DOM Elements
             const userImageContainer = document.getElementById('user-image-container');
@@ -696,8 +696,8 @@
             const resultContainer = document.getElementById('result-container');
             const resultCanvas = document.getElementById('result-canvas');
             const resultPlaceholder = document.getElementById('result-placeholder');
-            const loadingSpinner = document.getElementById('loading-spinner');
-            const downloadBtn = document.getElementById('download-btn');
+            const loadingSpinner = document.getElementById('loading-spinner'); -->
+            <!-- const downloadBtn = document.getElementById('download-btn');
 
             // Modal Elements
             const modal = document.getElementById('messageModal');
@@ -752,8 +752,8 @@
                         item.dataset.garmentId = garment.id;
                         item.innerHTML = `
                             <img src="${garment.image}" alt="${garment.name}" class="w-full h-auto object-cover rounded-md">
-                            <p class="text-center text-sm mt-2">${garment.name}</p>
-                        `;
+                            <p class="text-center text-sm mt-2">${garment.name}</p> -->
+                        <!-- `;
                         itemsGrid.appendChild(item);
                     });
 
@@ -776,8 +776,8 @@
             }
 
             function hideModal() {
-                 modal.style.display = 'none';
-            }
+                 modal.style.display = 'none'; -->
+            <!-- }
 
             function fileToGenerativePart(file) {
                 return new Promise((resolve, reject) => {
@@ -794,9 +794,9 @@
                     reader.onerror = (err) => reject(err);
                     reader.readAsDataURL(file);
                 });
-            }
+            } -->
 
-            // --- Event Listeners ---
+            <!-- // --- Event Listeners ---
             userImageContainer.addEventListener('click', () => userImageUpload.click());
             uploadUserBtn.addEventListener('click', () => userImageUpload.click());
 
@@ -813,9 +813,9 @@
                     reader.readAsDataURL(file);
                     updateTryOnButtonState();
                 }
-            });
+            }); -->
 
-            document.getElementById('garment-categories').addEventListener('click', (event) => {
+            <!-- document.getElementById('garment-categories').addEventListener('click', (event) => {
                 const target = event.target.closest('.garment-item');
                 if (target) {
                     document.querySelectorAll('.garment-item img').forEach(img => img.classList.remove('selected'));
@@ -824,14 +824,14 @@
                     selectedGarment = garments.find(g => g.id == target.dataset.garmentId);
                     updateTryOnButtonState();
                 }
-            });
+            }); -->
 
-             tryOnBtn.addEventListener('click', async () => {
+             <!-- tryOnBtn.addEventListener('click', async () => {
                 if (!userImageFile || !selectedGarment) {
                     showModal('Error', 'Please upload your image and select a garment first.');
                     return;
-                }
-                resultPlaceholder.classList.add('hidden');
+                } -->
+                <!-- resultPlaceholder.classList.add('hidden');
                 resultCanvas.classList.add('hidden');
                 loadingSpinner.classList.remove('hidden');
                 downloadBtn.classList.add('hidden');
@@ -839,30 +839,30 @@
                 geminiTryOnBtn.disabled = true;
                 tryOnBtn.textContent = 'Generating...';
 
-                await setupCanvas();
+                await setupCanvas(); -->
 
-                loadingSpinner.classList.add('hidden');
+                <!-- loadingSpinner.classList.add('hidden');
                 resultCanvas.classList.remove('hidden');
                 downloadBtn.classList.remove('hidden');
                 tryOnBtn.disabled = false;
                 geminiTryOnBtn.disabled = false;
                 tryOnBtn.textContent = 'Generate Try-On (Canvas)';
-            });
+            }); -->
 
-            geminiTryOnBtn.addEventListener('click', async () => {
+            <!-- geminiTryOnBtn.addEventListener('click', async () => {
                 if (!userImageFile || !selectedGarment) {
                     showModal('Error', 'Please upload your image and select a garment first.');
                     return;
-                }
-                resultPlaceholder.classList.add('hidden');
+                } -->
+                <!-- resultPlaceholder.classList.add('hidden');
                 resultCanvas.classList.add('hidden');
                 loadingSpinner.classList.remove('hidden');
                 tryOnBtn.disabled = true;
                 geminiTryOnBtn.disabled = true;
                 geminiTryOnBtn.textContent = `Generating ${selectedGarment.name}...`;
-                downloadBtn.classList.add('hidden');
+                downloadBtn.classList.add('hidden'); -->
 
-                try {
+                <!-- try {
                     const userImagePart = await fileToGenerativePart(userImageFile);
 
                     const garmentImageResponse = await fetch(selectedGarment.image);
@@ -872,8 +872,8 @@
 
                     const promptText = `You are an expert at photo editing. Your task is to perform a virtual try-on. Take the person from the first image and realistically place the garment, which is a '${selectedGarment.name}', from the second image onto their torso. The garment should fit their body shape and pose naturally. Preserve the original background, the person's head, arms, and legs. Output only the final, edited image.`;
 
-                    const payload = {
-                        contents: [{
+                    const payload = { -->
+                        <!-- contents: [{
                             parts: [
                                 { text: promptText },
                                 userImagePart,
@@ -883,20 +883,20 @@
                          generationConfig: {
                             responseModalities: ['IMAGE']
                         }
-                    };
+                    }; -->
 
-                    const response = await fetch(apiUrl, {
+                    <!-- const response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
-                    });
+                    }); -->
 
-                    if (!response.ok) {
+                    <!-- if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(`API Error: ${errorData.error.message}`);
-                    }
+                    } -->
 
-                    const result = await response.json();
+                    <!-- const result = await response.json();
 
                     const part = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
                     const base64Data = part?.inlineData?.data;
@@ -914,8 +914,8 @@
                             downloadBtn.classList.remove('hidden');
                         };
                         generatedImage.src = `data:image/png;base64,${base64Data}`;
-                    } else {
-                        throw new Error("No image data received from the API. The response may not contain an image.");
+                    } else { -->
+                        <!-- throw new Error("No image data received from the API. The response may not contain an image.");
                     }
 
                 } catch (error) {
@@ -944,8 +944,8 @@
             let loadedUserImg = null;
             let loadedGarmentImg = null;
 
-            let garment = {
-                x: 50,
+            let garment = { -->
+                <!-- x: 50,
                 y: 50,
                 width: 100,
                 height: 120
@@ -969,8 +969,8 @@
 
             async function setupCanvas() {
                 try {
-                    // Reset image load state
-                    loadedUserImg = null;
+                    // Reset image load state -->
+                    <!-- loadedUserImg = null;
                     loadedGarmentImg = null;
 
                     [loadedUserImg, loadedGarmentImg] = await Promise.all([
@@ -997,9 +997,9 @@
                     geminiTryOnBtn.disabled = false;
                     tryOnBtn.textContent = 'Generate Try-On (Canvas)';
                 }
-            }
+            } -->
 
-            function drawCanvas() {
+            <!-- function drawCanvas() {
                 if (!loadedUserImg || !loadedGarmentImg) {
                     // This console.error is the source of the logs, but we keep it for debugging.
                     // The new guards in the event listeners will prevent this from being spammed.
@@ -1009,9 +1009,9 @@
                 ctx.clearRect(0, 0, resultCanvas.width, resultCanvas.height);
                 ctx.drawImage(loadedUserImg, 0, 0, resultCanvas.width, resultCanvas.height);
                 ctx.drawImage(loadedGarmentImg, garment.x, garment.y, garment.width, garment.height);
-            }
+            } -->
 
-            resultCanvas.addEventListener('mousedown', (e) => {
+            <!-- resultCanvas.addEventListener('mousedown', (e) => {
                 if (!loadedUserImg || !loadedGarmentImg) return; // Guard clause
                 const mouseX = e.offsetX;
                 const mouseY = e.offsetY;
@@ -1021,17 +1021,17 @@
                     startX = mouseX - garment.x;
                     startY = mouseY - garment.y;
                 }
-            });
+            }); -->
 
-            resultCanvas.addEventListener('mousemove', (e) => {
+            <!-- resultCanvas.addEventListener('mousemove', (e) => {
                 if (isDragging) { // This is implicitly guarded by mousedown
                     garment.x = e.offsetX - startX;
                     garment.y = e.offsetY - startY;
                     drawCanvas();
                 }
-            });
+            }); -->
 
-            resultCanvas.addEventListener('mouseup', () => isDragging = false);
+            <!-- resultCanvas.addEventListener('mouseup', () => isDragging = false);
             resultCanvas.addEventListener('mouseleave', () => isDragging = false);
 
             resultCanvas.addEventListener('wheel', (e) => {
@@ -1039,9 +1039,9 @@
                 e.preventDefault();
                 const scaleAmount = 0.05;
                 const oldWidth = garment.width;
-                const oldHeight = garment.height;
+                const oldHeight = garment.height; -->
 
-                if (e.deltaY < 0) {
+                <!-- if (e.deltaY < 0) {
                     garment.width *= (1 + scaleAmount);
                     garment.height *= (1 + scaleAmount);
                 } else {
@@ -1053,23 +1053,23 @@
                 garment.y += (oldHeight - garment.height) / 2;
 
                 drawCanvas();
-            });
+            }); -->
 
 
-            // Modal close events
+            <!-- // Modal close events
             closeButton.addEventListener('click', hideModal);
             window.addEventListener('click', (event) => {
                 if (event.target == modal) {
                     hideModal();
                 }
-            });
+            }); -->
 
-            // --- Initial Load ---
+            <!-- // --- Initial Load ---
             loadGarments();
             updateTryOnButtonState();
         });
     </script>
 
 </body>
-</html>
- -->
+</html> --> -->
+
